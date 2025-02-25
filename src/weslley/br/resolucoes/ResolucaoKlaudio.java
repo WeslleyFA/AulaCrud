@@ -43,12 +43,11 @@ public class ResolucaoKlaudio {
 	    Aluno novoAluno = new Aluno();
 
 	    while (true) {
-	        lerDadosAluno(novoAluno, scan); 
-	        // Verifica se o aluno foi cadastrado corretamente
+	        lerDadosAluno(novoAluno, scan);        
 	        if (novoAluno.getId() != null && novoAluno.getNome() != null && novoAluno.getIdade() != null && novoAluno.getNomeCurso() != null) {
 	            bancoAlunos.add(novoAluno);
 	            System.out.println("Aluno cadastrado com sucesso!");
-	            break; // Sai do loop se tudo ocorrer bem
+	            break; 
 	        } else {
 	            System.out.println("Erro ao cadastrar aluno. Tente novamente.");
 	        }
@@ -80,7 +79,7 @@ public class ResolucaoKlaudio {
 				while (true) {
 					try {
 						System.out.print("Novo nome: ");
-						aluno.setNome(scan.nextLine());
+						aluno.setNome(scan.next());
 
 						System.out.print("Nova Idade: ");
 						aluno.setIdade(scan.nextInt());
@@ -109,11 +108,11 @@ public class ResolucaoKlaudio {
 				try {
 					System.out.print("Digite o ID quem deseja deletar: ");
 					Long idSelecionado = scan.nextLong();
-					scan.nextLine();
+					
 
 					Aluno alunoExcluido = null;
 					for (Aluno aluno : bancoAlunos) {
-						if (aluno.getId().equals(idSelecionado)) {
+						if (aluno.getId() == idSelecionado) {
 							alunoExcluido = aluno;
 							break;
 						}
@@ -128,7 +127,7 @@ public class ResolucaoKlaudio {
 					break;
 				} catch (Exception e) {
 					System.out.println("Erro, tente novamente.");
-					scan.nextLine();
+					
 				}
 			}
 		}
@@ -168,8 +167,8 @@ public class ResolucaoKlaudio {
 			System.out.print("Nome do Curso: ");
 			aluno.setNomeCurso(scan.nextLine());
 		} catch (Exception e) {
-			System.out.println("Erro ao ler os dados do aluno: " + e.getMessage());
-			scan.nextLine(); // Limpa o buffer em caso de erro
+			System.out.println("Erro ao ler os dados do aluno. " );
+			scan.nextLine(); 
 		}
 
 	}
