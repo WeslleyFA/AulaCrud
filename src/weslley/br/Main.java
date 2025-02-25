@@ -1,9 +1,10 @@
 package weslley.br;
 
+import weslley.br.resolucoes.ResolucaoKlaudio;
 
 public class Main {
-
 	public static void main(String[] args) {
+
 	
 		Integer numero = 19;
 		
@@ -12,6 +13,7 @@ public class Main {
 		System.out.println(numero);
 		
 
+		ResolucaoKlaudio resolucao = new ResolucaoKlaudio();
+		resolucao.menu();
 	}
-
 }
